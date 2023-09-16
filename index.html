@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>hello world</title>
+    </head>
+    <body>
+
+        <div id="header"><h1>HEADER</h1></div>
+        <div id="root">
+            <h1>this is root element</h1>
+
+        </div>
+        <div id="footer"><h1>FOOTER</h1></div>
+    </body>
+
+    <!-- REACT CDN => it contains javascript code which someone else wrote for us-->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+
+    <script>
+
+        // create h1 element using react
+
+        // object inside this createElement is called props
+        const heading=React.createElement("h1",null,"this is hello world program");
+
+        console.log("type s ",typeof(heading));
+        const heading2=React.createElement("h2",{},"this is h2 world program");
+        
+        console.log("heading is ",heading); // this is an object of type:h1
+
+
+
+        const div_container=React.createElement("div",{
+            id:"container"
+        },heading); // when we have to pass multiple childrens insdie div than we pass as an array
+
+        //React.createRoot is a method in the React library that is used to create a new root in the React DOM tree.
+        const root_el=ReactDOM.createRoot(document.getElementById("root"));
+
+        console.log(root_el); // it is also an object
+
+        // n React, the render method is a required method that is defined in every component. It is used to define what the component should render to the screen.
+        root_el.render(heading);
+        root_el.render(heading2);
+        console.log("hii hello"); // js code also work inside this
+    </script>
+
+
+</html>
